@@ -10,8 +10,8 @@ va applicato uno sconto del 40% per gli over 65.*/
 //chiedere età
 const kmRequest = prompt("Quanti chilometri devi percorrere?");
 const userAge = prompt("Quanti anni hai?");
-console.log(kmRequest);
-console.log(userAge);
+console.log("chilometri richiesti ", kmRequest);
+console.log("anni utente ", userAge);
 
 //calcolo prezzo biglietto in base ai chilometri
 let userPrice = kmRequest * 0.21;
@@ -20,9 +20,13 @@ console.log("il prezzo in base ai chilometri è", userPrice);
 //sconto 20% minorenni e sconto 40% over 65
 if (userAge <  18) {
     userPrice = userPrice * 80 / 100;
+    console.log("Prezzo scontato minore", userPrice);
 } else if (userAge > 65) {
     userPrice = userPrice * 60 / 100;
+    console.log("Prezzo scontato over65", userPrice);
+} else {
+    console.log("Prezzo non scontato", userPrice);
 }
 
 //comunicazione prezzo all'utente
-document.getElementById("price").innerHTML = userPrice;
+document.getElementById("price").innerHTML = userPrice.toFixed(2) + " €";
