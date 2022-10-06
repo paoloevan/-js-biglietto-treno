@@ -18,4 +18,15 @@ let userPrice = kmRequest * 0.21;
 console.log("il prezzo in base ai chilometri è", userPrice);
 
 //sconto 20% minorenni e sconto 40% over 65
-if 
+if (userAge <  18) {
+    userPrice = userPrice * 80 / 100;
+} else if (userAge > 65) {
+    userPrice = userPrice * 60 / 100;
+    console.log("over", userPrice);
+} else {
+    Math.round(userPrice);
+    console.log("non scontato", userPrice);
+}
+
+//comunicazione pezzo all'utente
+document.getElementById("price").innerHTML = userPrice;
