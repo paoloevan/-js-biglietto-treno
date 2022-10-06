@@ -22,11 +22,7 @@ if (userAge <  18) {
     userPrice = userPrice * 80 / 100;
 } else if (userAge > 65) {
     userPrice = userPrice * 60 / 100;
-    console.log("over", userPrice);
-} else {
-    Math.round(userPrice);
-    console.log("non scontato", userPrice);
 }
 
-//comunicazione pezzo all'utente
+//comunicazione prezzo all'utente
 document.getElementById("price").innerHTML = userPrice;
